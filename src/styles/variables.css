@@ -1,0 +1,22 @@
+:root {
+  /* Flat Design Palette */
+  --deep-navy: #1A3A52;
+  --sage-green: #6B8E7F;
+  --warm-off-white: #F9F9F7;
+  --light-gray: #F4F4F4;
+  --dark-navy: #1A1A1A;
+  --border-gray: #E8E8E8;
+  --pure-white: #FFFFFF;
+  
+  /* Semantic Mappings */
+  --primary: var(--deep-navy);
+  --secondary: var(--sage-green);
+  --background: var(--warm-off-white);
+  --text-main: var(--dark-navy);
+  --text-light: var(--light-gray);
+  
+  /* Layout */
+  --border-width: 1px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+}
