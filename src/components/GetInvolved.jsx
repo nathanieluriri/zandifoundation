@@ -34,7 +34,6 @@ const GetInvolved = () => {
   return (
     <section id="get-involved" className="py-20 md:py-28 bg-warm-off-white">
       <div className="container mx-auto px-4">
-        {/* Donation CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,23 +41,20 @@ const GetInvolved = () => {
           transition={{ duration: 0.5 }}
           className="max-w-4xl mx-auto mb-20 text-center"
         >
-          {/* Confirmed H2 Heading */}
           <h2 className="text-4xl md:text-5xl font-serif text-deep-navy mb-6">
             Get Involved
           </h2>
           <p className="text-xl text-dark-navy font-sans mb-10 max-w-2xl mx-auto">
-            Your support transforms lives. Every contribution helps us provide essential healthcare and support vulnerable children.
+            Your support transforms lives. Every contribution helps us provide essential healthcare, diabetes awareness, and protection for vulnerable children.
           </p>
           <Button
             onClick={() => window.open('mailto:zandiinitiative@gmail.com', '_blank')} 
-            // onClick={() => window.open('https://wa.me/2349035085013?text=Hello%2C%20I%20would%20like%20to%20donate%20to%20the%20ZandI%20Foundation', '_blank')}
             className="bg-deep-navy hover:bg-[#152e42] text-white px-10 py-6 text-lg font-sans font-medium rounded-[2px] shadow-none transition-all duration-200"
           >
-            To Donate reach out via Email
+            Donate or Partner via Email
           </Button>
         </motion.div>
 
-        {/* Contact Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {contactInfo.map((item, index) => {
             const Icon = item.icon;
@@ -67,7 +63,6 @@ const GetInvolved = () => {
                 <div className="mb-4">
                   <Icon size={24} className="text-sage-green" aria-hidden="true" />
                 </div>
-                {/* H3 for contact labels */}
                 <h3 className="text-sm uppercase tracking-wider text-gray-500 font-sans mb-2 font-semibold">
                   {item.label}
                 </h3>

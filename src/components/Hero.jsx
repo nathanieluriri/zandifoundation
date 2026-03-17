@@ -22,37 +22,43 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-deep-navy"
     >
-      {/* Background Image converted to img for SEO Alt text support */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1680778468132-603f082fa4f5" 
           alt="Smiling Nigerian child receiving care at ZandI Foundation outreach in Abuja."
           className="w-full h-full object-cover"
         />
-        {/* Solid overlay with opacity */}
-        <div className="absolute inset-0 bg-deep-navy/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-navy/80 via-deep-navy/90 to-deep-navy/95" />
       </div>
 
-      {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-32 md:py-40">
-        <div className="max-w-4xl mx-auto text-center md:text-left">
+        <div className="max-w-5xl mx-auto text-center md:text-left">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex bg-white/10 border border-white/25 text-white text-xs sm:text-sm uppercase tracking-widest px-4 py-2 mb-6"
+          >
+            Registered NGO | CAC IT 8365812
+          </motion.p>
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight"
           >
-            Championing Health, <br/>
-            <span className="text-sage-green">Cherishing Every Child.</span>
+            Zainab and Ismail Diabetes and Child Care Initiative
+            <span className="block text-sage-green mt-2">(ZandI Foundation)</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-2xl text-gray-200 mb-10 font-sans font-light max-w-2xl"
+            className="text-lg md:text-2xl text-gray-200 mb-10 font-sans font-light max-w-3xl"
           >
-            Caring for Children, Preventing Diabetes, Building Healthy Futures
+            Caring for children, preventing diabetes, and building healthier futures through outreach, education, and direct support for vulnerable families in Abuja.
           </motion.p>
 
           <motion.div
@@ -74,6 +80,17 @@ const Hero = () => {
             >
               Learn More
             </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.55 }}
+            className="mt-10 grid sm:grid-cols-3 gap-3 max-w-3xl"
+          >
+            <div className="border border-white/25 bg-white/10 px-4 py-3 text-white text-sm">Health Screening Outreach</div>
+            <div className="border border-white/25 bg-white/10 px-4 py-3 text-white text-sm">Child Welfare Support</div>
+            <div className="border border-white/25 bg-white/10 px-4 py-3 text-white text-sm">Community Health Education</div>
           </motion.div>
         </div>
       </div>

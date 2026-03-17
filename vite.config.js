@@ -8,7 +8,7 @@ import selectionModePlugin from './plugins/selection-mode/vite-plugin-selection-
 
 const isDev = process.env.NODE_ENV !== 'production';
 
-const configHorizonsViteErrorHandler = `
+const configSiteViteErrorHandler = `
 const observer = new MutationObserver((mutations) => {
 	for (const mutation of mutations) {
 		for (const addedNode of mutation.addedNodes) {
@@ -48,14 +48,14 @@ function handleViteOverlay(node) {
 		const error = messageText + (fileText ? ' File:' + fileText : '');
 
 		window.parent.postMessage({
-			type: 'horizons-vite-error',
+			type: 'site-vite-error',
 			error,
 		}, '*');
 	}
 }
 `;
 
-const configHorizonsRuntimeErrorHandler = `
+const configSiteRuntimeErrorHandler = `
 window.onerror = (message, source, lineno, colno, errorObj) => {
 	const errorDetails = errorObj ? JSON.stringify({
 		name: errorObj.name,
@@ -67,14 +67,14 @@ window.onerror = (message, source, lineno, colno, errorObj) => {
 	}) : null;
 
 	window.parent.postMessage({
-		type: 'horizons-runtime-error',
+		type: 'site-runtime-error',
 		message,
 		error: errorDetails
 	}, '*');
 };
 `;
 
-const configHorizonsConsoleErrorHandler = `
+const configSiteConsoleErrorHandler = `
 const originalConsoleError = console.error;
 const MATCH_LINE_COL_REGEX = /:(\\d+):(\\d+)\\)?\\s*$/; // regex to match the :lineNum:colNum
 const MATCH_AT_REGEX = /^\\s*at\\s+(?:async\\s+)?(?:.*?\\s+)?\\(?/; // regex to remove the 'at' keyword and any 'async' or function name
@@ -138,7 +138,7 @@ console.error = function(...args) {
 	}
 
 	window.parent.postMessage({
-		type: 'horizons-console-error',
+		type: 'site-console-error',
 		error: errorString
 	}, '*');
 };
@@ -201,7 +201,7 @@ if (window.navigation && window.self !== window.top) {
 		}
 
 		window.parent.postMessage({
-			type: 'horizons-navigation-error',
+			type: 'site-navigation-error',
 			url,
 		}, '*');
 	});
@@ -215,19 +215,19 @@ const addTransformIndexHtml = {
 			{
 				tag: 'script',
 				attrs: { type: 'module' },
-				children: configHorizonsRuntimeErrorHandler,
+				children: configSiteRuntimeErrorHandler,
 				injectTo: 'head',
 			},
 			{
 				tag: 'script',
 				attrs: { type: 'module' },
-				children: configHorizonsViteErrorHandler,
+				children: configSiteViteErrorHandler,
 				injectTo: 'head',
 			},
 			{
 				tag: 'script',
 				attrs: {type: 'module'},
-				children: configHorizonsConsoleErrorHandler,
+				children: configSiteConsoleErrorHandler,
 				injectTo: 'head',
 			},
 			{

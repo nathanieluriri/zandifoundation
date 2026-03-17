@@ -16,26 +16,24 @@ const AboutUs = () => {
         }} transition={{
           duration: 0.5
         }} className="mb-12">
-            {/* H2 Heading for Section */}
             <h2 className="text-4xl md:text-5xl font-serif text-deep-navy mb-8">
               Who We Are
             </h2>
             <div className="w-full h-px bg-border-gray mb-10"></div>
             
             <p className="text-xl text-dark-navy font-sans leading-relaxed mb-8">
-              The <strong className="text-deep-navy font-bold">Zainab and Ismail Diabetes and Child Care Initiative (ZandI Foundation)</strong>) is a non-profit, non-political organization dedicated to improving the lives of children in Nigeria.
+              The <strong className="text-deep-navy font-bold">Zainab and Ismail Diabetes and Child Care Initiative (ZandI Foundation)</strong> is a non-profit, non-political organization dedicated to improving the lives of children in Nigeria.
             </p>
             <p className="text-xl text-dark-navy font-sans leading-relaxed">
-  Our mission is twofold: <br /><br />
+  Our mission is practical and people-first: <br /><br />
   
-  • Championing childhood diabetes awareness and care through education, early detection, and access to treatment, ensuring that children living with diabetes can thrive. <br /><br />
+  • Championing childhood diabetes awareness and care through education, early detection, and access to treatment so children living with diabetes can thrive. <br /><br />
   
   • Providing holistic child care and protection by supporting orphaned and vulnerable children with healthcare, education, and social welfare, creating a nurturing environment where every child has the chance to grow and succeed. <br /><br />
   
-  At ZandI Foundation, we believe that every child deserves both good health and a safe, supportive community.
+  At ZandI Foundation, we believe every child deserves both good health and a safe, supportive community.
 </p></motion.div>
 
-          {/* Legal Transparency Badge */}
           <motion.div initial={{
           opacity: 0,
           y: 20

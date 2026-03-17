@@ -3,16 +3,14 @@ import { Helmet } from 'react-helmet';
 
 const SEO = ({ title, description, keywords, image, url }) => {
   const siteDetails = {
-    name: 'Zainab and Ismail Diabetes and Child Care Initiative',
+    name: 'Zainab and Ismail Diabetes and Child Care Initiative (ZandI Foundation)',
     alternateName: 'ZandI Foundation',
-    // Updated default description per task
-    description: 'The Zainab and Ismail Diabetes and Child Care Initiative provides free diabetes screenings, orphan support, and scholarships in Abuja. Join our mission today.',
+    description: 'Zainab and Ismail Diabetes and Child Care Initiative (ZandI Foundation) delivers child-focused diabetes prevention, health outreach, and welfare support in Abuja, Nigeria.',
     url: 'https://zandifoundation.org',
-    image: 'https://images.unsplash.com/photo-1680778468132-603f082fa4f5', // Hero image as default OG image
-    logo: 'https://horizons-cdn.hostinger.com/0c5bbcf8-d3c8-4ae2-a678-6693f78cd4dd/deec0fb5dd1ff029cefe2133b063ca77.png',
+    image: 'https://images.unsplash.com/photo-1680778468132-603f082fa4f5',
+    logo: 'https://res.cloudinary.com/dtueats6s/image/upload/v1771339693/zainifoundation_crop_d1a199.png',
     twitterHandle: '@zandifoundation',
-    // Updated keywords per task
-    keywords: 'NGO Nigeria, Diabetes Care Abuja, Orphanage Support, ZandI Foundation, Child Welfare, Charity Abuja, Diabetes Prevention, Education Scholarships Nigeria',
+    keywords: 'Zainab and Ismail Diabetes and Child Care Initiative, ZandI Foundation, NGO Nigeria, Diabetes Care Abuja, Child Welfare, Charity Abuja, Diabetes Prevention, Education Scholarships Nigeria',
     themeColor: '#1A3A52',
     address: {
       street: 'Block C9, Flat 1, FCDA Owners Occupier Estate',
@@ -27,61 +25,68 @@ const SEO = ({ title, description, keywords, image, url }) => {
     registration: 'IT 8365812'
   };
 
-  // Updated default title per task
-  const metaTitle = title || "ZandI Foundation | Diabetes Care & Child Support in Nigeria";
+  const metaTitle = title || 'Zainab and Ismail Diabetes and Child Care Initiative (ZandI Foundation)';
   const metaDescription = description || siteDetails.description;
   const metaKeywords = keywords || siteDetails.keywords;
   const metaImage = image || siteDetails.image;
   const metaUrl = url || siteDetails.url;
 
-  // Specific OG Title/Desc per task
-  const ogTitle = title || "Caring for Children, Preventing Diabetes - ZandI Foundation";
-  const ogDescription = description || "Empowering communities in Abuja through health education and child support. Registered NGO (CAC IT 8365812).";
+  const ogTitle = title || 'Caring for Children, Preventing Diabetes - ZandI Foundation';
+  const ogDescription = description || 'Empowering communities in Abuja through health education and child support. Registered NGO (CAC IT 8365812).';
 
-  // JSON-LD Structured Data
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "NGO",
-        "@id": `${siteDetails.url}/#organization`,
-        "name": siteDetails.name,
-        "alternateName": siteDetails.alternateName,
-        "url": siteDetails.url,
-        "logo": {
-          "@type": "ImageObject",
-          "url": siteDetails.logo
+        '@type': 'NGO',
+        '@id': `${siteDetails.url}/#organization`,
+        name: siteDetails.name,
+        alternateName: siteDetails.alternateName,
+        url: siteDetails.url,
+        logo: {
+          '@type': 'ImageObject',
+          url: siteDetails.logo
         },
-        "description": siteDetails.description,
-        "email": siteDetails.contact.email,
-        "telephone": siteDetails.contact.phone,
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": siteDetails.address.street,
-          "addressLocality": siteDetails.address.city,
-          "addressRegion": siteDetails.address.region,
-          "addressCountry": "NG"
+        description: siteDetails.description,
+        email: siteDetails.contact.email,
+        telephone: siteDetails.contact.phone,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: siteDetails.address.street,
+          addressLocality: siteDetails.address.city,
+          addressRegion: siteDetails.address.region,
+          addressCountry: 'NG'
         },
-        "sameAs": [
-          "https://facebook.com/zandifoundation",
-          "https://twitter.com/zandifoundation",
-          "https://instagram.com/zandifoundation"
+        sameAs: [
+          'https://facebook.com/zandifoundation',
+          'https://twitter.com/zandifoundation',
+          'https://instagram.com/zandifoundation'
         ],
-        "identifier": {
-          "@type": "PropertyValue",
-          "name": "CAC Registration",
-          "value": siteDetails.registration
+        identifier: {
+          '@type': 'PropertyValue',
+          name: 'CAC Registration',
+          value: siteDetails.registration
         },
-        "foundingDate": "2025-03-25"
+        foundingDate: '2025-03-25',
+        areaServed: 'Nigeria',
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: siteDetails.contact.phone,
+          email: siteDetails.contact.email,
+          contactType: 'customer support',
+          areaServed: 'NG',
+          availableLanguage: ['en']
+        }
       },
       {
-        "@type": "WebSite",
-        "@id": `${siteDetails.url}/#website`,
-        "url": siteDetails.url,
-        "name": siteDetails.alternateName,
-        "description": siteDetails.description,
-        "publisher": {
-          "@id": `${siteDetails.url}/#organization`
+        '@type': 'WebSite',
+        '@id': `${siteDetails.url}/#website`,
+        url: siteDetails.url,
+        name: siteDetails.name,
+        description: siteDetails.description,
+        inLanguage: 'en-NG',
+        publisher: {
+          '@id': `${siteDetails.url}/#organization`
         }
       }
     ]
@@ -89,7 +94,6 @@ const SEO = ({ title, description, keywords, image, url }) => {
 
   return (
     <Helmet>
-      {/* Standard Meta Tags */}
       <html lang="en-NG" />
       <meta charSet="utf-8" />
       <title>{metaTitle}</title>
@@ -97,13 +101,14 @@ const SEO = ({ title, description, keywords, image, url }) => {
       <meta name="keywords" content={metaKeywords} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="theme-color" content={siteDetails.themeColor} />
-      <meta name="author" content={siteDetails.alternateName} />
-      <meta name="copyright" content={`© ${new Date().getFullYear()} ${siteDetails.alternateName}`} />
-      <meta name="robots" content="index, follow" />
+      <meta name="author" content={siteDetails.name} />
+      <meta name="copyright" content={`© ${new Date().getFullYear()} ${siteDetails.name}`} />
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <link rel="canonical" href={metaUrl} />
+      <meta name="geo.region" content="NG-FC" />
+      <meta name="geo.placename" content="Abuja" />
 
-      {/* Open Graph / Facebook / LinkedIn */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={metaUrl} />
       <meta property="og:title" content={ogTitle} />
@@ -112,7 +117,6 @@ const SEO = ({ title, description, keywords, image, url }) => {
       <meta property="og:site_name" content={siteDetails.alternateName} />
       <meta property="og:locale" content="en_NG" />
 
-      {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={ogTitle} />
       <meta name="twitter:description" content={ogDescription} />
@@ -120,16 +124,14 @@ const SEO = ({ title, description, keywords, image, url }) => {
       <meta name="twitter:creator" content={siteDetails.twitterHandle} />
       <meta name="twitter:site" content={siteDetails.twitterHandle} />
 
-      {/* External Resources Prefetching */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
       <link rel="dns-prefetch" href="https://images.unsplash.com" />
+      <link rel="dns-prefetch" href="https://res.cloudinary.com" />
 
-      {/* Favicons */}
       <link rel="icon" type="image/png" href={siteDetails.logo} />
       <link rel="apple-touch-icon" href={siteDetails.logo} />
 
-      {/* Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
       </script>

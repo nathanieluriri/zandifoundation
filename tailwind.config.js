@@ -50,8 +50,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Merriweather', 'serif'],
+        sans: ['Manrope', 'sans-serif'],
+        serif: ['Fraunces', 'serif'],
       },
       borderRadius: {
         lg: '4px',
