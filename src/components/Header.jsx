@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -30,9 +30,10 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-border-gray h-20">
+    <header className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-border h-20">
       <div className="container mx-auto px-4 h-full">
         <div className="flex items-center justify-between h-full">
+
           {/* Logo */}
           <a
             href="#home"
@@ -59,14 +60,15 @@ const Header = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="text-dark-navy hover:text-deep-navy font-sans font-medium text-sm tracking-wide transition-colors duration-200"
+                className="text-foreground hover:text-primary font-sans font-medium text-sm tracking-wide transition-colors duration-200"
               >
                 {item.name}
               </a>
             ))}
+
+            {/* FIXED BUTTON */}
             <Button
               onClick={() => scrollToSection('#get-involved')}
-              className="bg-deep-navy hover:bg-[#152e42] text-white px-6 py-2 rounded-[2px] font-sans font-medium border border-transparent transition-all duration-200 shadow-none hover:shadow-none"
             >
               Donate Now
             </Button>
@@ -75,7 +77,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-deep-navy hover:bg-light-gray rounded-[2px] transition-colors"
+            className="lg:hidden p-2 text-foreground hover:bg-muted rounded-[2px] transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -91,7 +93,7 @@ const Header = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden border-b border-border-gray bg-warm-off-white overflow-hidden"
+            className="lg:hidden border-b border-border bg-background overflow-hidden"
           >
             <div className="container mx-auto px-4 py-6 space-y-4">
               {menuItems.map((item) => (
@@ -102,14 +104,15 @@ const Header = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="block py-2 text-dark-navy hover:text-deep-navy font-medium border-b border-border-gray last:border-0"
+                  className="block py-2 text-foreground hover:text-primary font-medium border-b border-border last:border-0"
                 >
                   {item.name}
                 </a>
               ))}
+
               <Button
+                className="w-full"
                 onClick={() => scrollToSection('#get-involved')}
-                className="w-full bg-deep-navy hover:bg-[#152e42] text-white py-3 rounded-[2px] font-medium shadow-none mt-4"
               >
                 Donate Now
               </Button>

@@ -20,24 +20,31 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-deep-navy"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* Background */}
       <div className="absolute inset-0 z-0">
+        
+        {/* Image */}
         <img 
           src="https://images.unsplash.com/photo-1680778468132-603f082fa4f5" 
           alt="Smiling Nigerian child receiving care at ZandI Foundation outreach in Abuja."
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover brightness-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-navy/80 via-deep-navy/90 to-deep-navy/95" />
+
+        {/* Strong Blue Overlay */}
+        <div className="absolute inset-0 bg-blue-800 opacity-70"></div>
       </div>
 
+      {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-32 md:py-40">
         <div className="max-w-5xl mx-auto text-center md:text-left">
+          
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex bg-white/10 border border-white/25 text-white text-xs sm:text-sm uppercase tracking-widest px-4 py-2 mb-6"
+            className="inline-flex bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs sm:text-sm uppercase tracking-widest px-4 py-2 mb-6"
           >
             Registered NGO | CAC IT 8365812
           </motion.p>
@@ -49,14 +56,14 @@ const Hero = () => {
             className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight"
           >
             Zainab and Ismail Diabetes and Child Care Initiative
-            <span className="block text-sage-green mt-2">(ZandI Foundation)</span>
+            <span className="block text-white mt-2">(ZandI Foundation)</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-2xl text-gray-200 mb-10 font-sans font-light max-w-3xl"
+            className="text-lg md:text-2xl text-gray-100 mb-10 font-sans font-light max-w-3xl"
           >
             Caring for children, preventing diabetes, and building healthier futures through outreach, education, and direct support for vulnerable families in Abuja.
           </motion.p>
@@ -69,14 +76,15 @@ const Hero = () => {
           >
             <Button
               onClick={() => scrollToSection('#get-involved')}
-              className="bg-white hover:bg-gray-100 text-deep-navy px-8 py-6 text-lg font-sans font-medium rounded-[2px] shadow-none border border-transparent transition-colors"
+              className="bg-white hover:bg-gray-100 text-blue-900 px-8 py-6 text-lg font-sans font-medium rounded-[2px]"
             >
               Donate Now
             </Button>
+
             <Button
               onClick={() => scrollToSection('#about')}
               variant="outline"
-              className="bg-transparent border border-white text-white hover:bg-white hover:text-deep-navy px-8 py-6 text-lg font-sans font-medium rounded-[2px] shadow-none transition-colors"
+              className="bg-transparent border border-white text-white hover:bg-white hover:text-blue-900 px-8 py-6 text-lg font-sans font-medium rounded-[2px]"
             >
               Learn More
             </Button>
@@ -88,10 +96,17 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.55 }}
             className="mt-10 grid sm:grid-cols-3 gap-3 max-w-3xl"
           >
-            <div className="border border-white/25 bg-white/10 px-4 py-3 text-white text-sm">Health Screening Outreach</div>
-            <div className="border border-white/25 bg-white/10 px-4 py-3 text-white text-sm">Child Welfare Support</div>
-            <div className="border border-white/25 bg-white/10 px-4 py-3 text-white text-sm">Community Health Education</div>
+            <div className="border border-white/30 bg-white/20 backdrop-blur-sm px-4 py-3 text-white text-sm">
+              Health Screening Outreach
+            </div>
+            <div className="border border-white/30 bg-white/20 backdrop-blur-sm px-4 py-3 text-white text-sm">
+              Child Welfare Support
+            </div>
+            <div className="border border-white/30 bg-white/20 backdrop-blur-sm px-4 py-3 text-white text-sm">
+              Community Health Education
+            </div>
           </motion.div>
+
         </div>
       </div>
     </section>
