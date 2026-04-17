@@ -13,14 +13,14 @@ const SEO = ({ title, description, keywords, image, url }) => {
     keywords: 'Zainab and Ismail Diabetes and Child Care Initiative, ZandI Foundation, NGO Nigeria, Diabetes Care Abuja, Child Welfare, Charity Abuja, Diabetes Prevention, Education Scholarships Nigeria',
     themeColor: '#1A3A52',
     address: {
-      street: 'Block C9, Flat 1, FCDA Owners Occupier Estate',
+      street: 'NNPC Estate, Lifecamp, Abuja',
       city: 'Abuja',
       region: 'FCT',
       country: 'Nigeria'
     },
     contact: {
       phone: '+234 903 508 5013',
-      email: 'zeebuumar@gmail.com'
+      email: 'zandiinitiative@gmail.com'
     },
     registration: 'IT 8365812'
   };

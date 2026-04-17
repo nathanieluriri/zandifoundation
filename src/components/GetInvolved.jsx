@@ -8,7 +8,7 @@ const GetInvolved = () => {
     {
       icon: MapPin,
       label: 'Visit Us',
-      value: 'Flat 5, NNPC Estate, Lifecamp, Abuja',
+      value: 'NNPC Estate, Lifecamp, Abuja',
       action: null
     },
     {

@@ -23,7 +23,7 @@ const Footer = () => {
           <div className="text-left md:text-right space-y-2">
 
             <p className="text-sm text-foreground">
-              Flat 5, NNPC Estate, Lifecamp, Abuja
+              NNPC Estate, Lifecamp, Abuja
             </p>
 
             <p className="text-sm text-foreground">
