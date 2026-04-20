@@ -18,9 +18,12 @@ module.exports = {
     extend: {
       colors: {
         // Brand Primary
-        primary: { DEFAULT: '#0057A0', foreground: '#FFFFFF' },
+        primary: {
+          DEFAULT: '#0057A0',
+          foreground: '#FFFFFF'
+        },
 
-        // FIXED BRAND COLOR (was missing before)
+        // MAIN BRAND COLOR
         deepNavy: '#1A3A52',
 
         // Brand Colors
@@ -40,16 +43,28 @@ module.exports = {
         input: '#E8E8E8',
         ring: '#0057A0',
 
-        muted: { DEFAULT: '#F2F2F2', foreground: '#333333' },
-        accent: { DEFAULT: '#009688', foreground: '#FFFFFF' },
-        destructive: { DEFAULT: '#ef4444', foreground: '#FFFFFF' },
+        muted: {
+          DEFAULT: '#F2F2F2',
+          foreground: '#333333'
+        },
+
+        accent: {
+          DEFAULT: '#009688',
+          foreground: '#FFFFFF'
+        },
+
+        destructive: {
+          DEFAULT: '#ef4444',
+          foreground: '#FFFFFF'
+        },
       },
 
+      // ✅ ALL FONTS STANDARDIZED (NO MORE STYLED FONTS)
       fontFamily: {
         sans: ['Lato', 'sans-serif'],
-        heading: ['Montserrat', 'sans-serif'],
-        subheading: ['Poppins', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        heading: ['Lato', 'sans-serif'],
+        subheading: ['Lato', 'sans-serif'],
+        serif: ['Lato', 'sans-serif'],
       },
 
       borderRadius: {
