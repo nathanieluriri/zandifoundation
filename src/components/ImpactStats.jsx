@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const stats = [
-  { label: 'Children Reached', value: 'N/A' },
-  { label: 'Community Screenings', value: 'N/A' },
-  { label: 'Volunteer Partners', value: 'N/A' },
-  { label: 'Abuja Communities Served', value: 'N/A' }
+  { label: 'Children Reached', value: '136' },
+  { label: 'Community Screenings', value: '1' },
+  { label: 'Partners', value: '1' },
+  { label: 'Communities Served', value: '1' }
 ];
 
 const ImpactStats = () => {

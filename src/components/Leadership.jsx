@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
+/*edit*/
 const Leadership = () => {
   const team = [
     {
@@ -8,7 +8,7 @@ const Leadership = () => {
       role: 'CHAIRMAN & TRUSTEE',
       description:
         'Guiding the organization’s vision with compassionate leadership and unwavering advocacy for healthcare and child welfare.',
-      image: 'https://placehold.co/300x300?text=Zainab+Oyiza+Umar',
+      image: 'https://res.cloudinary.com/dbf0qhuqc/image/upload/v1780840370/zainab_wtg7mn.png',
       alt: 'Portrait of Zainab Oyiza Umar, Chairman of ZandI Foundation.'
     },
     {
@@ -24,7 +24,7 @@ const Leadership = () => {
       role: 'FUNDRAISING OFFICER & TRUSTEE',
       description:
         'Driving sustainable growth through strategic fundraising initiatives and fostering partnerships that empower our mission.',
-      image: 'https://placehold.co/300x300?text=Ismail+Adeiza+Suleiman',
+      image: 'https://res.cloudinary.com/dbf0qhuqc/image/upload/v1780840360/ismail_a1kljr.jpg',
       alt: 'Portrait of Ismail Adeiza Suleiman, Fundraising Officer of ZandI Foundation.'
     },
     {
@@ -32,7 +32,7 @@ const Leadership = () => {
       role: 'TRUSTEE MEMBER',
       description:
         'Championing integrity and collaborative leadership to advance our mission and ensure lasting impact within the community.',
-      image: 'https://placehold.co/300x300?text=Dr+Aisha+Suleiman',
+     image: 'https://placehold.co/300x300?text=Dr+Aisha+Suleiman',
       alt: 'Portrait of Dr Aisha Suleiman, Trustee Member of ZandI Foundation.'
     },
     {
@@ -40,7 +40,7 @@ const Leadership = () => {
       role: 'TRUSTEE MEMBER',
       description:
         'Providing steadfast guidance and committed oversight to strengthen our vision and uphold the values of our organization.',
-      image: 'https://placehold.co/300x300?text=Dr+Lukman+Olatoke',
+      image: 'https://res.cloudinary.com/dbf0qhuqc/image/upload/v1781820154/drolatoke_zssucg.jpg',
       alt: 'Portrait of Dr Lukman Olatoke, Trustee Member of ZandI Foundation.'
     }
   ];
@@ -48,6 +48,7 @@ const Leadership = () => {
   return (
     <section id="leadership" className="py-20 md:py-28 bg-light-gray">
       <div className="container mx-auto px-4">
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,6 +63,7 @@ const Leadership = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+
           {team.map((member, index) => (
             <motion.div
               key={index}
@@ -71,7 +73,8 @@ const Leadership = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white border border-border-gray p-6 flex flex-col items-center text-center hover:border-sage-green transition-colors duration-300"
             >
-              <div className="w-full h-48 bg-gray-200 mb-5">
+
+              <div className="w-full h-48 mb-5 overflow-hidden">
                 <img
                   src={member.image}
                   alt={member.alt}
@@ -90,12 +93,14 @@ const Leadership = () => {
               <p className="text-dark-navy font-sans leading-relaxed text-sm">
                 {member.description}
               </p>
+
             </motion.div>
           ))}
+
         </div>
       </div>
     </section>
   );
 };
 
-export default Leadership;
+export default Leadership; 

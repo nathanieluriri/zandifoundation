@@ -5,7 +5,7 @@ const SEO = ({ title, description, keywords, image, url }) => {
   const siteDetails = {
     name: 'Zainab and Ismail Diabetes and Child Care Initiative (ZandI Foundation)',
     alternateName: 'ZandI Foundation',
-    description: 'Zainab and Ismail Diabetes and Child Care Initiative (ZandI Foundation) delivers child-focused diabetes prevention, health outreach, and welfare support in Abuja, Nigeria.',
+    description: 'Zainab and Ismail Diabetes and Child Care Initiative (ZandI Foundation) delivers child-focused diabetes prevention, health outreach, and welfare support.',
     url: 'https://zandifoundation.org',
     image: 'https://images.unsplash.com/photo-1680778468132-603f082fa4f5',
     logo: 'https://res.cloudinary.com/dtueats6s/image/upload/v1771339693/zainifoundation_crop_d1a199.png',
@@ -32,7 +32,7 @@ const SEO = ({ title, description, keywords, image, url }) => {
   const metaUrl = url || siteDetails.url;
 
   const ogTitle = title || 'Caring for Children, Preventing Diabetes - ZandI Foundation';
-  const ogDescription = description || 'Empowering communities in Abuja through health education and child support. Registered NGO (CAC IT 8365812).';
+  const ogDescription = description || 'Empowering communities through health education and child support. Registered NGO (CAC IT 8365812).';
 
   const jsonLd = {
     '@context': 'https://schema.org',

@@ -1,31 +1,52 @@
 import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const menuItems = [
     { name: 'Home', href: '#home' },
     { name: 'About Us', href: '#about' },
     { name: 'Our Impact', href: '#impact' },
+    { name: 'Healthy Futures Awareness', href: '#healthy-futures-awareness' },
+    { name: 'Partners', href: '#partners' },
     { name: 'Leadership', href: '#leadership' },
     { name: 'Get Involved', href: '#get-involved' }
   ];
 
   const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
+    const scroll = () => {
+      const element = document.querySelector(href);
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(scroll, 300);
+    } else {
+      scroll();
     }
+
+    setIsMobileMenuOpen(false);
+  };
+
+  const goToDonatePage = () => {
+    navigate('/donate');
     setIsMobileMenuOpen(false);
   };
 
@@ -33,8 +54,6 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-border h-20">
       <div className="container mx-auto px-4 h-full">
         <div className="flex items-center justify-between h-full">
-
-          {/* Logo */}
           <a
             href="#home"
             onClick={(e) => {
@@ -44,14 +63,13 @@ const Header = () => {
             className="flex items-center"
           >
             <img
-              src="https://res.cloudinary.com/dtueats6s/image/upload/v1771339693/zainifoundation_crop_d1a199.png"
-              alt="ZandI Foundation Logo"
-              className="h-12 w-auto"
+              src="https://res.cloudinary.com/dbf0qhuqc/image/upload/f_auto,q_auto/new_logo_a8kk3p"
+              alt="Zainab and Ismail Logo"
+              className="h-14 w-auto object-contain p-1"
             />
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-5">
             {menuItems.map((item) => (
               <a
                 key={item.name}
@@ -66,15 +84,11 @@ const Header = () => {
               </a>
             ))}
 
-            {/* FIXED BUTTON */}
-            <Button
-              onClick={() => scrollToSection('#get-involved')}
-            >
+            <Button onClick={goToDonatePage}>
               Donate Now
             </Button>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 text-foreground hover:bg-muted rounded-[2px] transition-colors"
@@ -85,7 +99,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -110,10 +123,7 @@ const Header = () => {
                 </a>
               ))}
 
-              <Button
-                className="w-full"
-                onClick={() => scrollToSection('#get-involved')}
-              >
+              <Button className="w-full" onClick={goToDonatePage}>
                 Donate Now
               </Button>
             </div>
