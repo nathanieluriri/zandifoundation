@@ -4,19 +4,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+const policiesUrl =
+  'https://drive.google.com/file/d/1t3b5b0OpKLWLdZ6d3lyi2kdWw5XtxPkr/view?usp=sharing';
+
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   const menuItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Our Impact', href: '#impact' },
-    { name: 'Healthy Futures Awareness', href: '#healthy-futures-awareness' },
-    { name: 'Partners', href: '#partners' },
-    { name: 'Leadership', href: '#leadership' },
-    { name: 'Get Involved', href: '#get-involved' }
+    { name: 'Home', href: '#home', type: 'section' },
+    { name: 'About Us', href: '#about', type: 'section' },
+    { name: 'Our Impact', href: '#impact', type: 'section' },
+    { name: 'Media', href: '#media', type: 'section' },
+    { name: 'Partners', href: '#partners', type: 'section' },
+    { name: 'Leadership', href: '#leadership', type: 'section' },
+    { name: 'Get Involved', href: '#get-involved', type: 'section' },
+    { name: 'Policies', href: policiesUrl, type: 'external' }
   ];
 
   const scrollToSection = (href) => {
@@ -43,6 +47,20 @@ const Header = () => {
     }
 
     setIsMobileMenuOpen(false);
+  };
+
+  const openExternalLink = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleMenuClick = (item) => {
+    if (item.type === 'external') {
+      openExternalLink(item.href);
+      return;
+    }
+
+    scrollToSection(item.href);
   };
 
   const goToDonatePage = () => {
@@ -74,9 +92,11 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
+                target={item.type === 'external' ? '_blank' : undefined}
+                rel={item.type === 'external' ? 'noopener noreferrer' : undefined}
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection(item.href);
+                  handleMenuClick(item);
                 }}
                 className="text-foreground hover:text-primary font-sans font-medium text-sm tracking-wide transition-colors duration-200"
               >
@@ -113,9 +133,11 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
+                  target={item.type === 'external' ? '_blank' : undefined}
+                  rel={item.type === 'external' ? 'noopener noreferrer' : undefined}
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection(item.href);
+                    handleMenuClick(item);
                   }}
                   className="block py-2 text-foreground hover:text-primary font-medium border-b border-border last:border-0"
                 >

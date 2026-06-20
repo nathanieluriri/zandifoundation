@@ -5,7 +5,7 @@ import Hero from '@/components/Hero';
 import ImpactStats from '@/components/ImpactStats';
 import AboutUs from '@/components/AboutUs';
 import ImpactPillars from '@/components/ImpactPillars';
-import HealthyFuturesAwareness from '@/components/HealthyFuturesAwareness';
+import Media from '@/components/Media';
 import Partners from '@/components/Partners';
 import Leadership from '@/components/Leadership';
 import GetInvolved from '@/components/GetInvolved';
@@ -24,7 +24,7 @@ const HomePage = () => {
           <ImpactStats />
           <AboutUs />
           <ImpactPillars />
-          <HealthyFuturesAwareness />
+          <Media />
           <Partners />
           <Leadership />
           <GetInvolved />

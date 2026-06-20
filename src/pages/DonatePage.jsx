@@ -7,14 +7,9 @@ const DonatePage = () => {
     <div className="min-h-screen bg-[#dff7fb] flex flex-col">
       <Header />
 
-      <main className="flex-grow pt-28 pb-20">
+      <main className="flex-grow pt-20 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <img
-              src="https://res.cloudinary.com/dbf0qhuqc/image/upload/f_auto,q_auto/new_logo_a8kk3p"
-              alt="Zainab and Ismail Logo"
-              className="h-24 w-auto mx-auto mb-8 object-contain"
-            />
 
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-blue-900 mb-6">
               Donation Bank Details
@@ -101,6 +96,7 @@ const DonatePage = () => {
             <p className="text-xl text-blue-900 font-semibold mt-12">
               Thank you for supporting our mission.
             </p>
+
           </div>
         </div>
       </main>

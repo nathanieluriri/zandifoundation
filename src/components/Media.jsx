@@ -11,7 +11,7 @@ const images = Array.from(
   (_, i) => `/healthy-futures/photo${i + 1}.jpeg`
 );
 
-const HealthyFuturesAwareness = () => {
+const Media = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const openImage = (index) => {
@@ -36,18 +36,17 @@ const HealthyFuturesAwareness = () => {
 
   return (
     <section
-      id="healthy-futures-awareness"
+      id="media"
       className="py-20 bg-white"
     >
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">
-            Healthy Futures Awareness
+            Healthy Futures
           </h2>
 
           <p className="text-muted-foreground">
-            Highlights from our outreach events, awareness campaigns,
-            and community engagements focused on building healthier futures.
+           Healthy Futures is our flagship initiative bringing awareness, screening, and education to schools and communities. By equipping children, parents, and teachers with knowledge and tools, we are building a generation that is wise about sugar, strong in health, and ready for brighter futures.
           </p>
         </div>
 
@@ -83,7 +82,7 @@ const HealthyFuturesAwareness = () => {
                 <div className="overflow-hidden rounded-2xl shadow-lg bg-muted cursor-pointer">
                   <img
                     src={image}
-                    alt={`Healthy Futures Awareness ${index + 1}`}
+                    alt={`Media ${index + 1}`}
                     className="w-full h-[350px] object-cover hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
@@ -116,7 +115,7 @@ const HealthyFuturesAwareness = () => {
 
           <img
             src={images[selectedImage]}
-            alt={`Healthy Futures Awareness enlarged ${selectedImage + 1}`}
+            alt={`Media enlarged ${selectedImage + 1}`}
             className="max-w-full max-h-[85vh] object-contain rounded-lg"
           />
 
@@ -134,4 +133,4 @@ const HealthyFuturesAwareness = () => {
   );
 };
 
-export default HealthyFuturesAwareness;
+export default Media;
