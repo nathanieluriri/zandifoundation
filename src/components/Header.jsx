@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const policiesUrl =
-  'https://drive.google.com/file/d/1t3b5b0OpKLWLdZ6d3lyi2kdWw5XtxPkr/view?usp=sharing';
+  'https://drive.google.com/file/d/16nBP1odBHn2vq-0_qwbxSw7yW5imJMlR/view?usp=sharing';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
