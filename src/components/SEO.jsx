@@ -20,7 +20,7 @@ const SEO = ({ title, description, keywords, image, url }) => {
     },
     contact: {
       phone: '+234 903 508 5013',
-      email: 'zandiinitiative@gmail.com'
+      email: 'info@zandifoundation.com'
     },
     registration: 'IT 8365812'
   };

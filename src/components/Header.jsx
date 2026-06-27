@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const policiesUrl =
-  'https://drive.google.com/file/d/16nBP1odBHn2vq-0_qwbxSw7yW5imJMlR/view?usp=sharing';
+const policyItems = [
+  {
+    name: 'PSEA Policy',
+    href: 'https://drive.google.com/file/d/1DUof0lsw-X6hThMx_7moWDx372ANREui/view'
+  },
+  {
+    name: 'Child Safeguarding Policy',
+    href: 'https://drive.google.com/file/d/1Yhr300tbqm95OzR1KgaSVy7w0-9mmaBx/view'
+  }
+];
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isPoliciesOpen, setIsPoliciesOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -19,8 +28,7 @@ const Header = () => {
     { name: 'Media', href: '#media', type: 'section' },
     { name: 'Partners', href: '#partners', type: 'section' },
     { name: 'Leadership', href: '#leadership', type: 'section' },
-    { name: 'Get Involved', href: '#get-involved', type: 'section' },
-    { name: 'Policies', href: policiesUrl, type: 'external' }
+    { name: 'Get Involved', href: '#get-involved', type: 'section' }
   ];
 
   const scrollToSection = (href) => {
@@ -52,15 +60,7 @@ const Header = () => {
   const openExternalLink = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
     setIsMobileMenuOpen(false);
-  };
-
-  const handleMenuClick = (item) => {
-    if (item.type === 'external') {
-      openExternalLink(item.href);
-      return;
-    }
-
-    scrollToSection(item.href);
+    setIsPoliciesOpen(false);
   };
 
   const goToDonatePage = () => {
@@ -92,17 +92,43 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                target={item.type === 'external' ? '_blank' : undefined}
-                rel={item.type === 'external' ? 'noopener noreferrer' : undefined}
                 onClick={(e) => {
                   e.preventDefault();
-                  handleMenuClick(item);
+                  scrollToSection(item.href);
                 }}
                 className="text-foreground hover:text-primary font-sans font-medium text-sm tracking-wide transition-colors duration-200"
               >
                 {item.name}
               </a>
             ))}
+
+            <div
+              className="relative"
+            >
+              <button
+                type="button"
+                onClick={() => setIsPoliciesOpen(!isPoliciesOpen)}
+                className="flex items-center gap-1 text-foreground hover:text-primary font-sans font-medium text-sm tracking-wide transition-colors duration-200"
+              >
+                Policies
+                <ChevronDown size={16} />
+              </button>
+
+              {isPoliciesOpen && (
+                <div className="absolute top-full right-0 mt-3 w-64 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
+                  {policyItems.map((policy) => (
+                    <button
+                      key={policy.name}
+                      type="button"
+                      onClick={() => openExternalLink(policy.href)}
+                      className="block w-full text-left px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                    >
+                      {policy.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <Button onClick={goToDonatePage}>
               Donate Now
@@ -133,17 +159,46 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  target={item.type === 'external' ? '_blank' : undefined}
-                  rel={item.type === 'external' ? 'noopener noreferrer' : undefined}
                   onClick={(e) => {
                     e.preventDefault();
-                    handleMenuClick(item);
+                    scrollToSection(item.href);
                   }}
-                  className="block py-2 text-foreground hover:text-primary font-medium border-b border-border last:border-0"
+                  className="block py-2 text-foreground hover:text-primary font-medium border-b border-border"
                 >
                   {item.name}
                 </a>
               ))}
+
+              <div className="border-b border-border pb-2">
+                <button
+                  type="button"
+                  onClick={() => setIsPoliciesOpen(!isPoliciesOpen)}
+                  className="w-full flex items-center justify-between py-2 text-foreground hover:text-primary font-medium"
+                >
+                  Policies
+                  <ChevronDown
+                    size={18}
+                    className={`transition-transform ${
+                      isPoliciesOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                {isPoliciesOpen && (
+                  <div className="pl-4 pt-2 space-y-2">
+                    {policyItems.map((policy) => (
+                      <button
+                        key={policy.name}
+                        type="button"
+                        onClick={() => openExternalLink(policy.href)}
+                        className="block w-full text-left py-2 text-sm text-gray-700 hover:text-primary"
+                      >
+                        {policy.name}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               <Button className="w-full" onClick={goToDonatePage}>
                 Donate Now

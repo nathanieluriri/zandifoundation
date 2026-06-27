@@ -91,10 +91,10 @@ const Footer = () => {
             </p>
 
             <a
-              href="mailto:zandiinitiative@gmail.com"
+              href="mailto:info@zandifoundation.com"
               className="block text-sm text-primary hover:text-teal transition-colors"
             >
-              zandiinitiative@gmail.com
+              info@zandifoundation.com
             </a>
 
             <a

@@ -21,23 +21,19 @@ const Partners = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-md mx-auto">
+        <div className="max-w-md mx-auto flex justify-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-white border border-gray-200 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center"
+            className="flex justify-center items-center"
           >
             <img
               src="/partners/aperture-security.png"
               alt="Aperture Security Solutions Limited"
-              className="w-full max-w-xs object-contain mb-6"
+              className="w-full max-w-xs object-contain"
             />
-
-            <h3 className="text-xl font-bold text-blue-900">
-              Aperture Security Solutions Limited
-            </h3>
           </motion.div>
         </div>
       </div>
