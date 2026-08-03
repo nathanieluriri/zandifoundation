@@ -93,7 +93,19 @@ const DonatePage = () => {
               </div>
             </div>
 
-            <p className="text-xl text-blue-900 font-semibold mt-12">
+            {/* Paystack Button */}
+            <div className="mt-12">
+             <a
+  href="https://paystack.shop/pay/-p5eecru8e"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg border border-blue-800 transition-all duration-300 hover:scale-105"
+>
+  Donate via Paystack
+</a>
+            </div>
+
+            <p className="text-xl text-blue-900 font-semibold mt-10">
               Thank you for supporting our mission.
             </p>
 
