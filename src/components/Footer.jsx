@@ -83,7 +83,7 @@ const Footer = () => {
 
           <div className="text-left md:text-right space-y-2">
             <p className="text-sm text-foreground">
-              NNPC Estate, Lifecamp, Abuja
+              47, Ajose Adeogun Street, Utako, Abuja
             </p>
 
             <p className="text-sm text-foreground">
