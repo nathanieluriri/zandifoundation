@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 const images = Array.from(
-  { length: 33 },
+  { length: 41 },
   (_, i) => `/healthy-futures/photo${i + 1}.jpeg`
 );
 

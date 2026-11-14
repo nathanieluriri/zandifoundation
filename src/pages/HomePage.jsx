@@ -6,6 +6,7 @@ import ImpactStats from '@/components/ImpactStats';
 import AboutUs from '@/components/AboutUs';
 import ImpactPillars from '@/components/ImpactPillars';
 import Media from '@/components/Media';
+import ShopPreview from '@/components/ShopPreview';
 import Partners from '@/components/Partners';
 import Leadership from '@/components/Leadership';
 import GetInvolved from '@/components/GetInvolved';
@@ -25,6 +26,7 @@ const HomePage = () => {
           <AboutUs />
           <ImpactPillars />
           <Media />
+          <ShopPreview />
           <Partners />
           <Leadership />
           <GetInvolved />

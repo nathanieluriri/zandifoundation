@@ -28,7 +28,8 @@ const Header = () => {
     { name: 'Media', href: '#media', type: 'section' },
     { name: 'Partners', href: '#partners', type: 'section' },
     { name: 'Leadership', href: '#leadership', type: 'section' },
-    { name: 'Get Involved', href: '#get-involved', type: 'section' }
+    { name: 'Get Involved', href: '#get-involved', type: 'section' },
+    { name: 'Shop', href: '/shop', type: 'page' }
   ];
 
   const scrollToSection = (href) => {
@@ -63,6 +64,15 @@ const Header = () => {
     setIsPoliciesOpen(false);
   };
 
+  const handleMenuClick = (item) => {
+    if (item.type === 'page') {
+      navigate(item.href);
+      setIsMobileMenuOpen(false);
+    } else {
+      scrollToSection(item.href);
+    }
+  };
+
   const goToDonatePage = () => {
     navigate('/donate');
     setIsMobileMenuOpen(false);
@@ -94,7 +104,7 @@ const Header = () => {
                 href={item.href}
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection(item.href);
+                  handleMenuClick(item);
                 }}
                 className="text-foreground hover:text-primary font-sans font-medium text-sm tracking-wide transition-colors duration-200"
               >
@@ -161,7 +171,7 @@ const Header = () => {
                   href={item.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection(item.href);
+                    handleMenuClick(item);
                   }}
                   className="block py-2 text-foreground hover:text-primary font-medium border-b border-border"
                 >

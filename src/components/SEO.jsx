@@ -13,7 +13,7 @@ const SEO = ({ title, description, keywords, image, url }) => {
     keywords: 'Zainab and Ismail Diabetes and Child Care Initiative, ZandI Foundation, NGO Nigeria, Diabetes Care Abuja, Child Welfare, Charity Abuja, Diabetes Prevention, Education Scholarships Nigeria',
     themeColor: '#1A3A52',
     address: {
-      street: 'NNPC Estate, Lifecamp, Abuja',
+      street: '47 Ajose Adeogun Street, Utako',
       city: 'Abuja',
       region: 'FCT',
       country: 'Nigeria'
