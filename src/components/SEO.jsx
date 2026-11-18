@@ -19,7 +19,7 @@ const SEO = ({ title, description, keywords, image, url }) => {
       country: 'Nigeria'
     },
     contact: {
-      phone: '+234 916 166 5686',
+      phone: '+234 903 508 5013',
       email: 'info@zandifoundation.com'
     },
     registration: 'IT 8365812'
