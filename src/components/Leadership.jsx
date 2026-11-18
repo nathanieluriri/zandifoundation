@@ -13,11 +13,11 @@ const Leadership = () => {
     },
     {
       name: 'Massoud Abdulrahman Oredola',
-      role: 'SECRETARY & TRUSTEE',
+      role: 'FINANCE OFFICER & TRUSTEE',
       description:
         'Upholding transparent governance and ensuring effective execution of our mission with integrity and accountability.',
       image: 'https://placehold.co/300x300?text=Massoud+Abdulrahman+Oredola',
-      alt: 'Portrait of Massoud Abdulrahman Oredola, Secretary of ZandI Foundation.'
+      alt: 'Portrait of Massoud Abdulrahman Oredola, Finance Officer of ZandI Foundation.'
     },
     {
       name: 'Ismail Adeiza Suleiman',

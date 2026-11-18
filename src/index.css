@@ -47,3 +47,28 @@
 html {
   scroll-behavior: smooth;
 }
+/* Partners logo marquee */
+@keyframes partners-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.partners-marquee-track {
+  animation: partners-scroll 30s linear infinite;
+}
+
+.partners-marquee:hover .partners-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Soft fade at both edges */
+.partners-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners-marquee-track {
+    animation-duration: 90s;
+  }
+}

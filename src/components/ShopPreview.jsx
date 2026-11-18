@@ -22,7 +22,7 @@ const ShopPreview = () => {
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">Shop Our Merchandise</h2>
           <p className="text-muted-foreground">
-            Show your support with official ZandI Foundation tops and caps. Every
+            Show your support with official ZandI Foundation tops, caps, and hand bands. Every
             purchase helps us reach more children and communities.
           </p>
         </div>

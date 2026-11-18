@@ -27,9 +27,9 @@ const AboutUs = () => {
             <p className="text-xl text-dark-navy font-sans leading-relaxed">
   Our mission is practical and people-first: <br /><br />
   
-  • Championing childhood diabetes awareness and care through education, early detection, and access to treatment so children living with diabetes can thrive. <br /><br />
+  • Championing childhood diabetes awareness through education, early screening, and referral to the right support, so children living with diabetes can thrive. <br /><br />
   
-  • Providing holistic child care and protection by supporting orphaned and vulnerable children with healthcare, education, and social welfare, creating a nurturing environment where every child has the chance to grow and succeed. <br /><br />
+  • Supporting orphaned and vulnerable children with health education, learning support, and social welfare. <br /><br />
   
   At ZandI Foundation, we believe every child deserves both good health and a safe, supportive community.
 </p></motion.div>

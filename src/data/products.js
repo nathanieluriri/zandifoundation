@@ -84,10 +84,26 @@ export const products = [
     sizes: [],
     images: [{ src: '/shop/secure-the-futures-cap-white.jpg', label: 'Front' }],
   },
+  {
+    id: 'secure-the-futures-hand-band-green',
+    name: 'Secure the Futures Hand Band (Green)',
+    collection: 'Secure the Futures',
+    price: 1000,
+    sizes: [],
+    images: [{ src: '/shop/secure-the-futures-hand-band-green.jpg', label: 'Front' }],
+  },
+  {
+    id: 'secure-the-futures-hand-band-white',
+    name: 'Secure the Futures Hand Band (White)',
+    collection: 'Secure the Futures',
+    price: 500,
+    sizes: [],
+    images: [{ src: '/shop/secure-the-futures-hand-band-white.jpg', label: 'Front' }],
+  },
 ];
 
 // Orders are sent to this WhatsApp number until Paystack checkout is connected.
-export const ORDER_WHATSAPP_NUMBER = '2349035085013';
+export const ORDER_WHATSAPP_NUMBER = '2349161665686';
 
 export const formatNaira = (amount) =>
   `₦${Number(amount).toLocaleString('en-NG')}`;

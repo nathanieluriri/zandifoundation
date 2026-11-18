@@ -6,32 +6,108 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-const images = Array.from(
-  { length: 41 },
-  (_, i) => `/healthy-futures/photo${i + 1}.jpeg`
+// ─────────────────────────────────────────────────────────────
+// GALLERIES
+// To add photos: put them in the gallery's folder in /public, named
+// photo1.jpeg, photo2.jpeg … and increase `count` to the new total.
+// ─────────────────────────────────────────────────────────────
+const buildImages = (folder, count) =>
+  Array.from({ length: count }, (_, i) => `/${folder}/photo${i + 1}.jpeg`);
+
+const galleries = [
+  {
+    id: 'healthy-futures',
+    title: 'Healthy Futures',
+    description:
+      'Healthy Futures is our flagship initiative bringing awareness, screening, and education to schools and communities. By equipping children, parents, and teachers with knowledge and tools, we are building a generation that is wise about sugar, strong in health, and ready for brighter futures.',
+    images: buildImages('healthy-futures', 51),
+  },
+  {
+    id: 'secure-the-futures',
+    title: 'Secure the Futures',
+    description:
+      'Secure the Futures is our school safety awareness programme, helping children learn to stay safe at school, at home, and in their communities. By equipping children, teachers, and parents with practical knowledge and simple tools, we are building a generation that is aware, prepared, and protected, ready for brighter futures.',
+    images: buildImages('secure-the-futures', 10),
+  },
+];
+
+const GallerySlider = ({ gallery, onOpen }) => (
+  <div id={gallery.id} className="scroll-mt-24">
+    <div className="max-w-3xl mx-auto text-center mb-12">
+      <h2 className="text-4xl font-bold mb-4">{gallery.title}</h2>
+      <p className="text-muted-foreground">{gallery.description}</p>
+    </div>
+
+    <Swiper
+      modules={[Navigation, Autoplay]}
+      navigation
+      loop
+      autoplay={{
+        delay: 3500,
+        disableOnInteraction: false,
+      }}
+      spaceBetween={24}
+      slidesPerView={1}
+      breakpoints={{
+        640: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1280: {
+          slidesPerView: 4,
+        },
+      }}
+    >
+      {gallery.images.map((image, index) => (
+        <SwiperSlide key={image}>
+          <button
+            type="button"
+            onClick={() => onOpen(index)}
+            className="w-full text-left"
+          >
+            <div className="overflow-hidden rounded-2xl shadow-lg bg-muted cursor-pointer">
+              <img
+                src={image}
+                alt={`${gallery.title} ${index + 1}`}
+                className="w-full h-[350px] object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+          </button>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
 );
 
 const Media = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  // { gallery: index into `galleries`, image: index into that gallery's images }
+  const [selected, setSelected] = useState(null);
 
-  const openImage = (index) => {
-    setSelectedImage(index);
+  const activeImages = selected ? galleries[selected.gallery].images : [];
+
+  const openImage = (galleryIndex, imageIndex) => {
+    setSelected({ gallery: galleryIndex, image: imageIndex });
   };
 
   const closeImage = () => {
-    setSelectedImage(null);
+    setSelected(null);
   };
 
   const showPrevious = () => {
-    setSelectedImage((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
-    );
+    setSelected((prev) => ({
+      ...prev,
+      image: prev.image === 0 ? activeImages.length - 1 : prev.image - 1,
+    }));
   };
 
   const showNext = () => {
-    setSelectedImage((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
-    );
+    setSelected((prev) => ({
+      ...prev,
+      image: prev.image === activeImages.length - 1 ? 0 : prev.image + 1,
+    }));
   };
 
   return (
@@ -39,61 +115,17 @@ const Media = () => {
       id="media"
       className="py-20 bg-white"
     >
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">
-            Healthy Futures
-          </h2>
-
-          <p className="text-muted-foreground">
-           Healthy Futures is our flagship initiative bringing awareness, screening, and education to schools and communities. By equipping children, parents, and teachers with knowledge and tools, we are building a generation that is wise about sugar, strong in health, and ready for brighter futures.
-          </p>
-        </div>
-
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          navigation
-          loop
-          autoplay={{
-            delay: 3500,
-            disableOnInteraction: false,
-          }}
-          spaceBetween={24}
-          slidesPerView={1}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-            1280: {
-              slidesPerView: 4,
-            },
-          }}
-        >
-          {images.map((image, index) => (
-            <SwiperSlide key={index}>
-              <button
-                type="button"
-                onClick={() => openImage(index)}
-                className="w-full text-left"
-              >
-                <div className="overflow-hidden rounded-2xl shadow-lg bg-muted cursor-pointer">
-                  <img
-                    src={image}
-                    alt={`Media ${index + 1}`}
-                    className="w-full h-[350px] object-cover hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                </div>
-              </button>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <div className="container mx-auto px-4 space-y-20">
+        {galleries.map((gallery, galleryIndex) => (
+          <GallerySlider
+            key={gallery.id}
+            gallery={gallery}
+            onOpen={(imageIndex) => openImage(galleryIndex, imageIndex)}
+          />
+        ))}
       </div>
 
-      {selectedImage !== null && (
+      {selected !== null && (
         <div className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center px-4">
           <button
             type="button"
@@ -114,8 +146,8 @@ const Media = () => {
           </button>
 
           <img
-            src={images[selectedImage]}
-            alt={`Media enlarged ${selectedImage + 1}`}
+            src={activeImages[selected.image]}
+            alt={`${galleries[selected.gallery].title} enlarged ${selected.image + 1}`}
             className="max-w-full max-h-[85vh] object-contain rounded-lg"
           />
 

@@ -24,6 +24,15 @@ const TikTokIcon = () => (
   </svg>
 );
 
+const YouTubeIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+    <path
+      fillRule="evenodd"
+      d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"
+    />
+  </svg>
+);
+
 const Footer = () => {
   const socialLinks = [
     {
@@ -45,6 +54,11 @@ const Footer = () => {
       name: 'Instagram',
       href: 'https://www.instagram.com/zandifoundation?igsh=Z2YwMzhoOWEzaDd2&utm_source=qr',
       icon: InstagramIcon
+    },
+    {
+      name: 'YouTube',
+      href: 'https://www.youtube.com/@ZandIFoundation',
+      icon: YouTubeIcon
     }
   ];
 
@@ -98,10 +112,10 @@ const Footer = () => {
             </a>
 
             <a
-              href="tel:+2349035085013"
+              href="tel:+2349161665686"
               className="block text-sm text-primary hover:text-green transition-colors"
             >
-              +234 903 508 5013
+              +234 916 166 5686
             </a>
 
             <a

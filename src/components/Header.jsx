@@ -12,6 +12,14 @@ const policyItems = [
   {
     name: 'Child Safeguarding Policy',
     href: 'https://drive.google.com/file/d/1Yhr300tbqm95OzR1KgaSVy7w0-9mmaBx/view'
+  },
+  {
+    name: 'Finance and Procurement Policy',
+    href: 'https://drive.google.com/file/d/1TA-TeUQDkMuUWZi-k6bWEc-_uU2LLUPW/view'
+  },
+  {
+    name: 'Data Protection and Privacy Policy',
+    href: 'https://drive.google.com/file/d/1A8ya12jMtQ1a_NTZI0xSRezz0BzzNGOa/view'
   }
 ];
 

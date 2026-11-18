@@ -6,14 +6,14 @@ const ImpactPillars = () => {
   const pillars = [
     {
       icon: Droplet,
-      title: 'Diabetes Care & Prevention',
-      description: 'Championing childhood diabetes awareness and support through early screening, education, and management programs. We help children and families prevent and manage diabetes with lifestyle guidance, nutritional support, and access to essential medical care—ensuring that no child is left behind in the fight against diabetes.',
+      title: 'Diabetes Awareness & Prevention',
+      description: 'Championing childhood diabetes awareness and support through early screening and education. We help children and families prevent diabetes and live well with it through screening, lifestyle guidance, nutrition education, and referral to trusted health providers, so no child is left behind.',
       iconAlt: 'Icon representing diabetes blood sugar monitoring.'
     },
     {
       icon: Heart,
       title: 'Child Welfare & Orphan Care',
-      description: 'Providing a safety net for vulnerable and orphaned children by offering healthcare, education, and emotional support. We create nurturing environments that foster resilience, growth, and opportunity, so every child can thrive regardless of their circumstances.',
+      description: 'Supporting vulnerable and orphaned children by offering health education, learning opportunities, and emotional support.',
       iconAlt: 'Icon representing child care and support.'
     },
     {
